@@ -1,0 +1,9 @@
+<div class="small-recipe">
+    <img [src]="recipe.imageUrl" alt="{{ recipe.recipeName }}" class="recipe-image">
+    <div class="recipe-details">
+      <h3>{{ recipe.recipeName }}</h3>
+      <p><strong>Preparation Time:</strong> {{ recipe.preparationTimeMinutes }} minutes</p>
+      <p><strong>Difficulty:</strong> {{ recipe.difficultyLevel }}/5</p>
+       <button (click)="navigateToDetails(recipe)">For More</button>
+    </div>
+  </div>

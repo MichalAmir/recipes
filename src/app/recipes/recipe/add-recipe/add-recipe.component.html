@@ -1,0 +1,40 @@
+<h2>Add Recipe</h2>
+
+<label>Recipe Name:</label>
+<input type="text" [(ngModel)]="recipe.recipeName">
+
+<label>Category:</label>
+<select [(ngModel)]="recipe.category">
+  <option value="">Select Category</option>
+  <option *ngFor="let category of categories" [ngValue]="category">{{ category.name }}</option>
+</select>
+
+<label>Preparation Time (minutes):</label>
+<input type="number" [(ngModel)]="recipe.preparationTimeMinutes">
+
+<label>Difficulty Level:</label>
+<input type="number" [(ngModel)]="recipe.difficultyLevel">
+
+<label>Ingredients:</label>
+<div *ngFor="let ingredient of ingredientInputs; let i = index">
+  <input type="text" [(ngModel)]="ingredient.name">
+  <input type="text" [(ngModel)]="ingredient.icon">
+  <button (click)="addIngredientInput()" *ngIf="i === ingredientInputs.length - 1">Add Ingredient</button>
+  <button (click)="removeIngredientInput(i)">Remove Ingredient</button>
+</div>
+
+<label>Preparation Instructions:</label>
+<div *ngFor="let instruction of preparationInputs; let i = index">
+  <input type="text" [(ngModel)]="preparationInputs[i]">
+  <button (click)="addPreparationInput()" *ngIf="i === preparationInputs.length - 1">Add Instruction</button>
+  <button (click)="removePreparationInput(i)">Remove Instruction</button>
+</div>
+
+<label>User Code:</label>
+<input type="text" [(ngModel)]="recipe.userCode">
+
+<label>Image URL:</label>
+<input type="text" [(ngModel)]="recipe.imageUrl">
+
+<button (click)="saveRecipe()">Save Recipe</button>
+ 

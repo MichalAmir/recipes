@@ -1,0 +1,21 @@
+import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+import { AddRecipeComponent } from './add-recipe/add-recipe.component';
+import { ImageSliderComponent } from './image-slider/image-slider.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    AddRecipeComponent,
+    ImageSliderComponent
+  ],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule // השתמש ב-ReactiveFormsModule במקום FormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

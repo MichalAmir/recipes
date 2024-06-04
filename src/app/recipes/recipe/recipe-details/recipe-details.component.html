@@ -1,0 +1,24 @@
+<h1>{{ recipe.recipeName }}</h1>
+<img [src]="recipe.imageUrl" />
+<h2>{{ recipe.category.name }}</h2>
+<h3>{{ recipe.preparationTimeMinutes | timeConversion}} minutes</h3>
+<h3>Difficulty: {{ recipe.difficultyLevel }}/5</h3>
+<h3>Date Added: {{ recipe.dateAdded }}</h3>
+
+<h2>Ingredients</h2>
+<ul>
+  <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient.icon }}</li>
+</ul>
+
+<br />
+
+<h2>Preparation Method</h2>
+<ul>
+  <li *ngFor="let prepStep of recipe.preparationMethod">{{ prepStep }}</li>
+</ul>
+
+<div *ngIf="currentUser === recipe.userCode">
+  <button (click)="onDeleteRecipe(recipe.recipeCode)">Delete</button>
+  <button (click)="onEditRecipe(recipe)">Edit</button>
+  
+</div>

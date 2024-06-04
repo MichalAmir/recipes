@@ -1,0 +1,96 @@
+body {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* מאפשר גובה מלא של המסך */
+    display: flex; /* מאפשר שימוש ב-flexbox */
+    justify-content: center; /* ממרכז את התוכן אופקית */
+    align-items: center; /* ממרכז את התוכן אנכית */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1{
+    font-weight: bold; /* הדגשת הטקסט */
+    font-family: 'Doppio One';
+    text-align: center;
+    font-size: 27px;
+
+}
+
+/* Container styling */
+.container {
+    padding: 40px; /* הגדלת הריווח הפנימי */
+    background-color: #fff;
+    margin: 50px auto;
+    max-width: 600px; /* הגדלת רוחב המקסימום */
+    width: 100%; /* גורם לקונטיינר לתפוס 100% מהרוחב הזמין */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left; /* שינוי ליישור לשמאל */
+    direction: ltr; /* קביעת כיוון לשמאל עבור אנגלית */
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 20px; /* הגדלת הריווח בין קבוצות השדות */
+}
+
+label {
+    display: block;
+    margin-bottom: 8px; /* הגדלת הריווח בין התווית לשדה */
+    color: #333;
+    font-family: 'Doppio One';
+    font-size: 15px;
+}
+
+input[type=text], input[type=password], input[type=email] {
+    width: 100%;
+    padding: 15px; /* הגדלת הריווח הפנימי */
+    margin: 5px 0 20px 0; /* הגדלת הריווח החיצוני התחתון */
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+    transition: background-color 0.3s ease;
+    font-size: 16px; /* הגדלת גודל הטקסט */
+}
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
+    background-color: #e8f0fe;
+    outline: none;
+}
+
+/* Submit button styling */
+.registerbtn {
+    background-color: #4caf50;
+    color: white;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    margin-left: 30%;
+    border-radius: 5px;
+    font-size: 18px; /* הגדלת גודל הטקסט בכפתור */
+    transition: background-color 0.3s ease;
+}
+
+.registerbtn:hover {
+    background-color: #45a049;
+}
+
+/* Link styling */
+a {
+    color: dodgerblue;
+}
+
+/* Centered text for sign-in section */
+.signin {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
