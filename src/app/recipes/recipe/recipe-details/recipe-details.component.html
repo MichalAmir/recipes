@@ -1,24 +1,43 @@
-<h1>{{ recipe.recipeName }}</h1>
-<img [src]="recipe.imageUrl" />
-<h2>{{ recipe.category.name }}</h2>
-<h3>{{ recipe.preparationTimeMinutes | timeConversion}} minutes</h3>
-<h3>Difficulty: {{ recipe.difficultyLevel }}/5</h3>
-<h3>Date Added: {{ recipe.dateAdded }}</h3>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/@mui/material@latest/dist/index.min.css">
 
-<h2>Ingredients</h2>
-<ul>
-  <li *ngFor="let ingredient of recipe.ingredients">{{ ingredient.icon }}</li>
-</ul>
+<div
+  style="font-family: 'Open Sans', sans-serif; display: flex; justify-content: center; align-items: center; flex-direction: column; padding: 20px;">
+  <mat-card style="width: 80%; max-width: 600px; margin: 20px; padding: 20px;">
+    <mat-card-header>
+      <mat-card-title>
+        <h1>{{ recipe.recipeName }}</h1>
+      </mat-card-title>
+      <mat-card-subtitle>
+        <h2>{{ recipe.category.name }}</h2>
+      </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="recipe.imageUrl" alt="{{ recipe.recipeName }}" class="framed-image">
+    <mat-card-content>
+      <p><strong>זמן הכנה:</strong> {{ recipe.preparationTimeMinutes }} דקות</p>
+      <p><strong>רמת קושי:</strong> {{ recipe.difficultyLevel }}/5</p>
+      <p><strong>תאריך הוספה:</strong> {{ recipe.dateAdded }}</p>
 
-<br />
+      <h2>מצרכים</h2>
+      <mat-list>
+        <mat-list-item *ngFor="let ingredient of recipe.ingredients">
+          <img [src]="ingredient.icon" alt="{{ ingredient.name }}" class="ingredient-icon">
+          {{ ingredient.name }}
+        </mat-list-item>
+      </mat-list>
 
-<h2>Preparation Method</h2>
-<ul>
-  <li *ngFor="let prepStep of recipe.preparationMethod">{{ prepStep }}</li>
-</ul>
+      <h2>אופן הכנה:</h2>
+      <mat-list>
+        <mat-list-item *ngFor="let prepStep of recipe.preparationMethod">
+          {{ prepStep }}
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
 
-<div *ngIf="currentUser === recipe.userCode">
-  <button (click)="onDeleteRecipe(recipe.recipeCode)">Delete</button>
-  <button (click)="onEditRecipe(recipe)">Edit</button>
-  
+    <mat-card-actions *ngIf="currentUser === recipe.userCode" style="display: flex; justify-content: space-between;">
+      <button mat-button color="warn" (click)="onDeleteRecipe(recipe.recipeCode)">מחק</button>
+      <button mat-button color="primary" (click)="onEditRecipe(recipe)">ערוך</button>
+    </mat-card-actions>
+  </mat-card>
 </div>

@@ -2,7 +2,6 @@ import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core';
 import { UserService } from '../user/user.service';
 import { Router } from '@angular/router';
 import { User } from '../user/user.model';
-import Swal from 'sweetalert2';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -54,7 +53,7 @@ export class LoginComponent implements OnInit {
       if (user.password === password) {
         const serializedUser = JSON.stringify(user);
         sessionStorage.setItem('user', serializedUser);
-        Swal.fire('Success', 'Logged in successfully', 'success');
+        alert('Logged in successfully');
         this.router.navigate(['/allRecipes']);
       } else {
         this.errorMessage = 'Wrong password';
@@ -64,6 +63,5 @@ export class LoginComponent implements OnInit {
       this.errorMessage = 'User does not exist';
     }
   }
-
 }
 

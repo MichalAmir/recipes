@@ -6,17 +6,28 @@ import { UserService } from '../../../user/user.service';
 import Swal from 'sweetalert2';
 import { CommonModule } from '@angular/common';
 import { TimeConversionPipe } from '../../../time-conversion.pipe';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 @Component({
-  standalone: true,
-  imports: [CommonModule,TimeConversionPipe],
   selector: 'app-recipe-details',
+  standalone: true,
+  imports: [
+    CommonModule,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
+    MatListModule
+  ],
   templateUrl: './recipe-details.component.html',
+  styleUrls: ['./recipe-details.component.scss']
 })
 export class RecipeDetailsComponent implements OnInit {
   recipe: Recipe = {} as Recipe;
   currentUser: string | undefined;
-  
+
   constructor(
     private route: ActivatedRoute,
     private recipeService: RecipeService,
@@ -26,7 +37,7 @@ export class RecipeDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCurrentUserFromSessionStorage();
-    
+
     const recipeString = this.route.snapshot.paramMap.get('recipe');
     if (recipeString) {
       this.recipe = JSON.parse(recipeString);
@@ -40,6 +51,7 @@ export class RecipeDetailsComponent implements OnInit {
       this.recipeService.deleteRecipe(recipeId).subscribe(deleted => {
         if (deleted) {
           Swal.fire('Success', 'The recipe has been successfully deleted', 'success');
+          this._router.navigate(['/']);
         } else {
           Swal.fire({
             icon: 'error',
@@ -51,9 +63,11 @@ export class RecipeDetailsComponent implements OnInit {
       });
     }
   }
-  onEditRecipe(recipe: Recipe){
+
+  onEditRecipe(recipe: Recipe) {
     this._router.navigate(['/editRecipe', { recipe: JSON.stringify(recipe) }]);
   }
+
   getCurrentUserFromSessionStorage() {
     if (typeof sessionStorage !== 'undefined') {
       const userString = sessionStorage.getItem('user');

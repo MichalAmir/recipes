@@ -1,4 +1,6 @@
-<input type="text" placeholder="Search by recipe name" #searchInput (input)="filterRecipes(searchInput.value)">
-<div *ngFor="let recipe of filteredRecipes">
+<div class="search-container">
+    <input type="text" placeholder="Search by recipe name" #searchInput (input)="filterRecipes(searchInput.value)" class="search-input">
+</div>
+<div *ngFor="let recipe of filteredRecipes" >
     <app-small-recipe [recipe]="recipe"></app-small-recipe>
 </div>

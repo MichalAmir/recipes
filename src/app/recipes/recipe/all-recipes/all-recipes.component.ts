@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [SmallRecipeComponent,CommonModule],
   templateUrl: './all-recipes.component.html',
-  // styleUrl: './all-recipes.component.scss'
+  styleUrl: './all-recipes.component.scss'
 })
 
 export class AllRecipesComponent {

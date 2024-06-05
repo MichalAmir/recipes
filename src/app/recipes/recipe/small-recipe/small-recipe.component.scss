@@ -1,0 +1,52 @@
+.custom-button{
+    background-color: #929292 ; /* צבע רקע */
+    color: white; /* צבע טקסט */
+    padding: 10px 20px; /* מרווחים פנימיים */
+    font-size: 18px; /* גודל הגופן */
+    border: none; /* ללא גבול */
+    cursor: pointer; /* הקפיצה */
+    transition: background-color 0.3s; /* אנימציה של שינוי צבע רקע */
+    margin-bottom: 17px;
+    width: 200px;
+    border-radius: 20px; // הגדרת רדיוס עגול כדי ליצור איורים עם פינות עגולות
+
+    
+}
+
+.custom-button:hover {
+    background-color: #3d3d3d ; /* צבע רקע בעת מעבר עכבר */
+}
+
+img{
+    border-radius: 30px; // הגדרת רדיוס עבור פינות עגולות
+    border: 3px solid #bebebe; // הגדרת מסגרת בצבע אפור עם רוחב של 4 פיקסלים
+    padding: 5px; // מרווח מסביב לתמונה
+    width: 60%; // קביעת רוחב קטן יותר לתמונה
+    max-width: 300px; // קביעת רוחב מקסימלי כדי להגביל את הגודל המקסימלי
+    height: auto; // שמירה על יחס הגובה-רוחב המקורי של התמונה
+}
+.small-recipe {
+    display: flex;
+    flex-direction: column; /* הגדרת כיוון עמודה */
+    align-items: center; /* מיושר את האלמנטים למרכז העמודה */
+    text-align: center; /* מיושר את הטקסט למרכז האלמנט */
+}
+
+.recipe-image {
+    margin-bottom: 10px; /* מרווח תחתון בין התמונה לתיאור */
+}
+/* עיצובים לטקסט */
+h4, h3 {
+    font-family: 'Open Sans', sans-serif; // הגדרת גופן כללי
+    font-weight: bold; // הדגשת הטקסט
+    color: #333; // צבע כהה לטקסט
+    text-transform: uppercase; // הפיכת הטקסט לאותיות גדולות
+    letter-spacing: 1.5px; // מרווח בין האותיות
+    margin-bottom: 10px; // מרווח תחתון לכותרות
+  }  
+  p {
+    font-family: 'Open Sans', sans-serif; // הגדרת גופן כללי
+    color: #555; // צבע בינוני לפסקאות
+    line-height: 1.6; // מרווח בין השורות לפסקאות
+    margin-bottom: 15px; // מרווח תחתון לפסקאות
+  }

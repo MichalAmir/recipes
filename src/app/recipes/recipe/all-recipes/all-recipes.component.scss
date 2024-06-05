@@ -1,0 +1,22 @@
+.search-container {
+    display: flex;
+    justify-content: center; /* ממרכז את התיבה אופקית */
+    margin: 20px 0; /* רווח עליון ותחתון */
+}
+
+.search-input {
+    width: 50%; /* קובע רוחב של 50% מרוחב ההורה */
+    max-width: 600px; /* רוחב מקסימלי */
+    padding: 15px; /* רווח פנימי */
+    font-size: 18px; /* גודל הגופן */
+    border: 2px solid #bebebe; /* מסגרת בצבע אפור */
+    border-radius: 25px; /* פינות עגולות */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* צל קטן */
+    transition: border-color 0.3s, box-shadow 0.3s; /* אנימציה לשינוי צבע מסגרת וצל */
+}
+
+.search-input:focus {
+    border-color: #929292; /* צבע מסגרת כאשר התיבה בפוקוס */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* צל מוגבר כאשר התיבה בפוקוס */
+    outline: none; /* הסרת מסגרת ברירת מחדל */
+}

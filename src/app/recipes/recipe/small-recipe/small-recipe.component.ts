@@ -1,11 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { Recipe } from '../model/recipe.model';
 import { Ingredient } from '../model/Ingredient.model';
-
+import {MatGridListModule} from '@angular/material/grid-list';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
+
 @Component({
+  
   standalone: true,
   imports: [CommonModule],
   selector: 'app-small-recipe',
@@ -21,4 +23,3 @@ export class SmallRecipeComponent {
     this.router.navigate(['/recipeDetails', { recipe: JSON.stringify(recipe) }]);
   }
 }
-
